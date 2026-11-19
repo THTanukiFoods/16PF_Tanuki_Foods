@@ -604,8 +604,8 @@ function toggleAdminView() {
     return;
   }
   
-  const pwd = prompt('Ingrese la clave de Talento Humano (por defecto: TH2026):');
-  if (pwd === 'TH2026') {
+  const pwd = prompt('ingresar contraseña');
+  if (pwd === 'AdminTanuki2026*') {
     if (introView) introView.classList.add('hidden');
     if (testView) testView.classList.add('hidden');
     if (thanksView) thanksView.classList.add('hidden');
@@ -678,7 +678,7 @@ function renderAdminTable() {
   const filterCargoEl = document.getElementById('filter-cargo');
   const filterSedeEl = document.getElementById('filter-sede');
 
-  const filterDate = filterDateEl ? filterDateEl.value : ''; // Formato "YYYY-MM-DD" del input date
+  const filterDate = filterDateEl ? filterDateEl.value : '';
   const filterCargo = filterCargoEl ? filterCargoEl.value : '';
   const filterSede = filterSedeEl ? filterSedeEl.value : '';
 
@@ -688,8 +688,7 @@ function renderAdminTable() {
       const dateStr = String(r.fecha || '');
       const legibleStr = String(r.fecha_legible || '');
       
-      // Convertir YYYY-MM-DD a DD/MM/YYYY y D/M/YYYY para coincidir con cualquier configuración regional
-      const parts = filterDate.split('-'); // [YYYY, MM, DD]
+      const parts = filterDate.split('-');
       let reversedPadded = '';
       let reversedUnpadded = '';
       if (parts.length === 3) {
